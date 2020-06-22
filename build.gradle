@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group 'io.repsy.example'
+version '1.0'
+
+repositories {
+    mavenCentral()
+    
+    maven {
+        url repsyUrl
+
+        // You can remove credentials section if you are using public repository
+        credentials {
+            username repsyUsername
+            password repsyPassword
+        }
+    }
+}
+
+dependencies {
+    compile 'io.repsy.example:gradle-deploy:1.0'
+}
